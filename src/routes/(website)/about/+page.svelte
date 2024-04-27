@@ -1,3 +1,7 @@
+<script>
+	import logo from '$lib/images/eazyTechLogo.jpeg';
+	import contactImage from '$lib/images/contact.jpg'
+</script>
 <svelte:head>
 	<title>About</title>
 	<meta name="description" content="About us" />
@@ -15,7 +19,7 @@
 	<div class="container mt-5">
 		<div class="row gy-3 gy-md-4 gy-lg-0 align-items-lg-center">
 			<div class="col-12 col-lg-6 col-xl-5">
-				<img class="img-fluid rounded" loading="lazy" src="/src/lib/images/contact.jpg" alt="About 1">
+				<img class="img-fluid rounded" loading="lazy" src={contactImage} alt="About 1">
 			</div>
 			<div class="col-12 col-lg-6 col-xl-7">
 				<div class="row justify-content-xl-center">
@@ -85,7 +89,7 @@
 						<!--							<i class="fas fa-diagnoses fa-4x text-primary"></i>-->
 						<!--						</div>-->
 						<div class="me-auto">
-							<img src="/src/lib/images/eazyTechLogo.jpeg" alt="Bootstrap" width="32" height="32"
+							<img src={logo} alt="Bootstrap" width="32" height="32"
 									 class="rounded-circle border border-white">
 						</div>
 					</div>
@@ -106,7 +110,7 @@
 						<!--							<i class="fas fa-briefcase-medical fa-4x text-primary"></i>-->
 						<!--						</div>-->
 						<div class="me-auto">
-							<img src="/src/lib/images/eazyTechLogo.jpeg" alt="Bootstrap" width="32" height="32"
+							<img src={logo} alt="Bootstrap" width="32" height="32"
 									 class="rounded-circle border border-white">
 						</div>
 					</div>
@@ -127,7 +131,7 @@
 						<!--							<i class="fas fa-hospital-user fa-4x text-primary"></i>-->
 						<!--						</div>-->
 						<div class="me-auto">
-							<img src="/src/lib/images/eazyTechLogo.jpeg" alt="Bootstrap" width="32" height="32"
+							<img src={logo} alt="Bootstrap" width="32" height="32"
 									 class="rounded-circle border border-white">
 						</div>
 					</div>
@@ -148,7 +152,7 @@
 						<!--							<i class="fas fa-users fa-4x text-primary"></i>-->
 						<!--						</div>-->
 						<div class="me-auto">
-							<img src="/src/lib/images/eazyTechLogo.jpeg" alt="Bootstrap" width="32" height="32"
+							<img src={logo} alt="Bootstrap" width="32" height="32"
 									 class="rounded-circle border border-white">
 						</div>
 					</div>

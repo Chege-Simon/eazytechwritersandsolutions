@@ -1,6 +1,6 @@
 <script>
 	import { page } from '$app/stores';
-	import logo from '/src/lib/images/eazyTechLogoTransparent.png';
+	import logo from '$lib/images/eazyTechLogoTransparent.png';
 	import { currentUser, pb } from '$lib/pocketbase';
 	import { afterNavigate, beforeNavigate, goto } from '$app/navigation';
 
@@ -15,7 +15,7 @@
 	<div class="corner">
 		<a href="/">
 			<img
-				src="/src/lib/images/eazyTechLogoTransparent.png"
+				src={logo}
 				style="width: 400px; height: 300px; radius: 10%; margin-top: 150px;"
 				alt="logo"
 			/>

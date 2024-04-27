@@ -1,5 +1,6 @@
 <script>
 	import { afterNavigate, beforeNavigate, goto } from '$app/navigation';
+	import logo from '$lib/images/eazyTechLogoTransparent.png';
 	import { page } from '$app/stores';
 	import { currentUser, pb } from '$lib/pocketbase.js';
 	import { onDestroy, onMount } from 'svelte';
@@ -96,7 +97,7 @@
 				<div>
 					<a class="navbar-brand brand-logo" href="/">
 						<img
-							src="/src/lib/images/eazyTechLogoTransparent.png"
+							src={logo}
 							style="width: 200px; height: 120px; radius: 10%"
 							alt="logo"
 						/>

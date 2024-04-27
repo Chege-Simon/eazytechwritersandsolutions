@@ -1,8 +1,7 @@
 <script>
 	import Header from './Header.svelte';
 	import './styles.css';
-
-
+	import logo from '$lib/images/eazyTechLogoTransparent.png';
 	const date = new Date();
 </script>
 
@@ -39,7 +38,7 @@
 						<h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Short title, long jacket</h2>
 						<ul class="d-flex list-unstyled mt-auto">
 							<li class="me-auto">
-								<img src="/src/lib/images/eazyTechLogo.jpeg" alt="Bootstrap" width="32" height="32" class="rounded-circle border border-white">
+								<img src={logo} alt="Bootstrap" width="32" height="32" class="rounded-circle border border-white">
 							</li>
 						</ul>
 					</div>
@@ -54,7 +53,7 @@
 						<h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Much longer title that wraps to multiple lines</h2>
 						<ul class="d-flex list-unstyled mt-auto">
 							<li class="me-auto">
-								<img src="/src/lib/images/eazyTechLogo.jpeg" alt="Bootstrap" width="32" height="32" class="rounded-circle border border-white">
+								<img src={logo} alt="Bootstrap" width="32" height="32" class="rounded-circle border border-white">
 							</li>
 						</ul>
 					</div>
@@ -69,7 +68,7 @@
 						<h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Another longer title belongs here</h2>
 						<ul class="d-flex list-unstyled mt-auto">
 							<li class="me-auto">
-								<img src="/src/lib/images/eazyTechLogo.jpeg" alt="Bootstrap" width="32" height="32" class="rounded-circle border border-white">
+								<img src={logo} alt="Bootstrap" width="32" height="32" class="rounded-circle border border-white">
 							</li>
 						</ul>
 					</div>
