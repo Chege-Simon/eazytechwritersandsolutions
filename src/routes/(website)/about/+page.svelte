@@ -1,6 +1,6 @@
 <script>
-	import logo from '$lib/images/eazyTechLogo.jpeg';
-	import contactImage from '$lib/images/contact.jpg'
+	import logo from '$lib/assets/images/eazyTechLogo.jpeg';
+	import contactImage from '$lib/assets/images/contact.jpg'
 </script>
 <svelte:head>
 	<title>About</title>

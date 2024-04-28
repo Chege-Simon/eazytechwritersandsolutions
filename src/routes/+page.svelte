@@ -1,7 +1,13 @@
 <script>
 	import Header from './Header.svelte';
 	import './styles.css';
-	import logo from '$lib/images/eazyTechLogoTransparent.png';
+	import logo from '$lib/assets/images/eazyTechLogoTransparent.png';
+	import hero from  '$lib/assets/images/hero_background.jpg';
+	import service1 from '$lib/assets/images/services/services1.jpg';
+	import service2 from '$lib/assets/images/services/services2.jpg';
+	import service3 from '$lib/assets/images/services/services3.jpg';
+	import contact from '$lib/assets/images/contactUs.jpg';
+
 	const date = new Date();
 </script>
 
@@ -12,7 +18,7 @@
 <div class="app">
 	<!-- Hero section -->
 	<header class="hero-section text-dark bg-image"
-					style="background-image: url('/src/lib/images/hero_background.jpg');
+					style="background-image: url({hero});
         background-repeat: no-repeat; background-size: cover;
         background-position: top; height: 100vh">
 		<Header/>
@@ -32,7 +38,7 @@
 		<div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
 			<div class="col">
 				<div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg"
-						 style="background-image:  linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/src/lib/images/services/services1.jpg');
+						 style="background-image:  linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url({service1});
 						 background-repeat: no-repeat; background-size: cover">
 					<div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
 						<h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Short title, long jacket</h2>
@@ -47,7 +53,7 @@
 
 			<div class="col">
 				<div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg"
-						 style="background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/src/lib/images/services/services2.jpg');
+						 style="background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url({service2});
 						 background-repeat: no-repeat; background-size: cover">
 					<div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
 						<h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Much longer title that wraps to multiple lines</h2>
@@ -62,7 +68,7 @@
 
 			<div class="col">
 				<div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg"
-						 style="background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/src/lib/images/services/services3.jpg');
+						 style="background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url({service3});
 						 background-repeat: no-repeat; background-size: cover">
 					<div class="d-flex flex-column h-100 p-5 pb-3 text-shadow-1">
 						<h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Another longer title belongs here</h2>
@@ -79,7 +85,7 @@
 	</section>
 
 	<!-- Contact Section -->
-	<section id="contact" class="py-5" style="background-image: url('/src/lib/images/contactUs.jpg');
+	<section id="contact" class="py-5" style="background-image: url({contact});
 						 background-repeat: no-repeat; background-size: cover; background-position: center">
 			<!-- Contact 5 - Bootstrap Brain Component -->
 			<section class="py-3 py-md-5 py-xl-8">

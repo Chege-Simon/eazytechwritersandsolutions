@@ -1,6 +1,6 @@
 <script>
 	import { afterNavigate, beforeNavigate, goto } from '$app/navigation';
-	import logo from '$lib/images/eazyTechLogoTransparent.png';
+	import logo from '$lib/assets/images/eazyTechLogoTransparent.png';
 	import { page } from '$app/stores';
 	import { currentUser, pb } from '$lib/pocketbase.js';
 	import { onDestroy, onMount } from 'svelte';

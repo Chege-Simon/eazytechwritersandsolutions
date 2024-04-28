@@ -1,6 +1,6 @@
 <script>
 	import { page } from '$app/stores';
-	import logo from '$lib/images/eazyTechLogoTransparent.png';
+	import logo from '$lib/assets/images/eazyTechLogoTransparent.png';
 	import { currentUser, pb } from '$lib/pocketbase';
 	import { afterNavigate, beforeNavigate, goto } from '$app/navigation';
 

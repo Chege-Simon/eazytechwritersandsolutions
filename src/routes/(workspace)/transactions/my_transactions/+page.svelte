@@ -4,6 +4,7 @@
 	import { fade, fly } from 'svelte/transition';
 	import { quintOut } from 'svelte/easing';
 	import { goto } from '$app/navigation';
+	import bookgif from '$lib/assets/images/Book.gif';
 
 	let transactions = [];
 	let unsubscribe;
@@ -215,7 +216,7 @@
 					<img
 						style="width: 5rem; height: 5rem;"
 						class="position-absolute top-100 start-50 translate-middle"
-						src="/src/lib/images/Book.gif"
+						src={bookgif}
 						alt="loading"
 					/>
 				{/if}

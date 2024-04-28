@@ -2,6 +2,7 @@
 	import { currentUser, pb } from '$lib/pocketbase.js';
 	import { onDestroy, onMount } from 'svelte';
 	import Modal from '../../Modal.svelte';
+	import bookgif from '$lib/assets/images/Book.gif';
 
 	let showDeletePopup = false;
 	let showAssignPopup = false;
@@ -105,7 +106,7 @@
 					<img
 						style="width: 5rem; height: 5rem;"
 						class="position-absolute top-100 start-50 translate-middle"
-						src="/src/lib/images/Book.gif"
+						src={bookgif}
 						alt="loading"
 					/>
 				{/if}

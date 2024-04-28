@@ -3,6 +3,7 @@
 	import { onDestroy, onMount } from 'svelte';
 	import { fade, fly } from 'svelte/transition';
 	import { quintOut } from 'svelte/easing';
+	import bookgif from '$lib/assets/images/Book.gif';
 
 	let showAssignPopup = false;
 	let targetTask = {};
@@ -160,7 +161,7 @@
 					<img
 						style="width: 5rem; height: 5rem;"
 						class="position-absolute top-100 start-50 translate-middle"
-						src="/src/lib/images/Book.gif"
+						src={bookgif}
 						alt="loading"
 					/>
 				{/if}
