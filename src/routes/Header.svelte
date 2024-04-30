@@ -1,8 +1,8 @@
 <script>
+	import { afterNavigate, beforeNavigate, goto } from '$app/navigation';
 	import { page } from '$app/stores';
 	import logo from '$lib/assets/images/eazyTechLogoTransparent.png';
 	import { currentUser, pb } from '$lib/pocketbase';
-	import { afterNavigate, beforeNavigate, goto } from '$app/navigation';
 
 
 	function signOut() {
@@ -16,7 +16,7 @@
 		<a href="/">
 			<img
 				src={logo}
-				style="width: 400px; height: 300px; radius: 10%; margin-top: 150px;"
+				style="width: 200px; height: 150px; radius: 10%; margin-top: 150px;"
 				alt="logo"
 			/>
 		</a>
