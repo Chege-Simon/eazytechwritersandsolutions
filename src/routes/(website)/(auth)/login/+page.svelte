@@ -1,6 +1,6 @@
 <script>
+	import { goto } from '$app/navigation';
 	import { currentUser, pb } from '$lib/pocketbase.js';
-    import { goto } from '$app/navigation';
 
 	let userLogin = {
 		username: '',
@@ -28,7 +28,7 @@
 		<div class="card-body">
 			<form on:submit|preventDefault={login}>
 				<div class="mb-3">
-					<label for="username" class="form-label">User Name</label>
+					<label for="username" class="form-label">User Name or Email</label>
 					<input
 						type="text"
 						class="form-control"

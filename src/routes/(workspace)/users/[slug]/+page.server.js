@@ -2,7 +2,6 @@ import { currentUser, pb } from '$lib/pocketbase.js';
 import { error } from '@sveltejs/kit';
 
 export async function load({ params }) {
-	console.log(params.slug)
 	const user = await pb.collection('users').getOne(params.slug, {
 		expand: 'orders, tasks'
 	});
