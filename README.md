@@ -33,7 +33,22 @@ To create a production version of your app:
 npm run build
 ```
 
+## Deploying
+
+Use pm2 to make an instance of the application
+
+```bash
+pm2 start ./build/index.js
+```
+
+or restart with:
+
+```bash
+pm2 restart index
+```
+
 You can preview the production build with `npm run preview`.
 
 > To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+
 # eazytechwritersandsolutions
