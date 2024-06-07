@@ -19,8 +19,8 @@
 				goto('/orders/new');
 			}
 		} catch (err) {
-			console.log(err);
-			error = 'Failed to Login, Please check your credentials!';
+			error = err.data.data;
+			error.general = err.data.message;
 		}
 	}
 	async function resetPassword() {
@@ -29,8 +29,8 @@
 			if (!userLogin.email) error = 'Please enter your email to reset password!';
 			resetresponse = await pb.collection('users').requestPasswordReset(userLogin.email);
 		} catch (err) {
-			console.log(err);
-			error = 'Please enter a valid email!';
+			error = err.data.data;
+			error.general = err.data.message;
 		}
 	}
 </script>
@@ -46,6 +46,7 @@
 				<div class="container-fluid h-custom">
 					<div class="row d-flex justify-content-center align-items-center h-100 mt-5">
 						<div class="col-md-9 col-lg-6 col-xl-5">
+							<!-- svelte-ignore a11y-img-redundant-alt -->
 							<img
 								src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp"
 								class="img-fluid"
@@ -87,16 +88,19 @@
 								<div class="divider d-flex align-items-center my-4">
 									<p class="text-center fw-bold mx-3 mb-0">Or</p>
 								</div>
-								{#if error}
-									<small id="error" class="text-danger fw-bold">{error}</small>
+								{#if error.general}
+									<small id="error" class="text-danger fw-bold">{error.general}</small>
 								{/if}
 								<!-- Email input -->
+								{#if error.email}
+									<small id="error" class="text-danger fw-bold">{error.email.message}</small>
+								{/if}
 								<div data-mdb-input-init class="form-outline mb-4">
 									<input
 										id="Email"
 										class="form-control form-control-lg"
 										placeholder="Enter a valid Email"
-										type="text"
+										type="email"
 										aria-describedby="emailHelp"
 										required
 										bind:value={userLogin.email}
@@ -105,6 +109,9 @@
 								</div>
 
 								<!-- Password input -->
+								{#if error.password}
+									<small id="error" class="text-danger fw-bold">{error.password.message}</small>
+								{/if}
 								<div data-mdb-input-init class="form-outline mb-3">
 									<input
 										type="password"
@@ -118,13 +125,6 @@
 								</div>
 
 								<div class="d-flex justify-content-between align-items-center mx-2 px-2">
-									<!-- Checkbox -->
-									<!-- <div class="form-check mb-0">
-				<input class="form-check-input me-1" type="checkbox" value="" id="form2Example3" />
-				<label class="form-check-label" for="form2Example3">
-				  Remember me
-				</label>
-			  </div> -->
 									<a href="#!" on:click={resetPassword} class="text-body">Forgot password?</a>
 								</div>
 
