@@ -3,17 +3,17 @@
 	import { currentUser, pb } from '$lib/pocketbase.js';
 
 	let userLogin = {
-		username: '',
+		email: '',
 		password: ''
 	};
 	let error = '';
 
 	async function login() {
-		// console.log(userLogin.username, userLogin.password);
+		// console.log(userLogin.email, userLogin.password);
 		try {
 			const response = await pb
 				.collection('users')
-				.authWithPassword(userLogin.username, userLogin.password);
+				.authWithPassword(userLogin.email, userLogin.password);
 			console.log(response);
 			if (response.token && pb.authStore.isValid) {
 				goto('/orders/new');
@@ -26,8 +26,8 @@
 	async function resetPassword() {
 		let resetresponse = '';
 		try {
-			if (!userLogin.username) error = 'Please enter your email to reset password!';
-			resetresponse = await pb.collection('users').requestPasswordReset(userLogin.username);
+			if (!userLogin.email) error = 'Please enter your email to reset password!';
+			resetresponse = await pb.collection('users').requestPasswordReset(userLogin.email);
 		} catch (err) {
 			console.log(err);
 			error = 'Please enter a valid email!';
@@ -90,18 +90,18 @@
 								{#if error}
 									<small id="error" class="text-danger fw-bold">{error}</small>
 								{/if}
-								<!-- Username input -->
+								<!-- Email input -->
 								<div data-mdb-input-init class="form-outline mb-4">
 									<input
-										id="Username"
+										id="Email"
 										class="form-control form-control-lg"
-										placeholder="Enter a valid Userame Or Email"
+										placeholder="Enter a valid Email"
 										type="text"
-										aria-describedby="user_nameHelp"
+										aria-describedby="emailHelp"
 										required
-										bind:value={userLogin.username}
+										bind:value={userLogin.email}
 									/>
-									<label class="form-label" for="Username">Username</label>
+									<label class="form-label" for="Email">Email</label>
 								</div>
 
 								<!-- Password input -->
