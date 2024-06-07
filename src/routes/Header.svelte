@@ -68,7 +68,7 @@
 				</li>
 			{/each}
 			<span class="navbar-spacer me-auto"></span>
-			{#if $currentUser?.name}
+			{#if $currentUser?.name &&  pb.authStore.isValid}
 				{#each rightNavItemsLoggedIn as item}
 					<li>
 						<a href={item.href}>{item.label}</a>
