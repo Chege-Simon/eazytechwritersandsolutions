@@ -1,7 +1,7 @@
 <script>
 	import { afterNavigate, beforeNavigate, goto } from '$app/navigation';
-	import logo from '$lib/assets/images/eazyTechLogoTransparent.png';
 	import { page } from '$app/stores';
+	import logo from '$lib/assets/images/eazyTechLogoTransparent.png';
 	import { currentUser, pb } from '$lib/pocketbase.js';
 	import { onDestroy, onMount } from 'svelte';
 
@@ -22,32 +22,31 @@
 		var interval = seconds / 31536000;
 
 		if (interval > 1) {
-			return Math.floor(interval) + " years";
+			return Math.floor(interval) + ' years';
 		}
 
 		interval = seconds / 2592000;
 		if (interval > 1) {
-			return Math.floor(interval) + " months";
+			return Math.floor(interval) + ' months';
 		}
 
 		interval = seconds / 86400;
 		if (interval > 1) {
-			return Math.floor(interval) + " days";
+			return Math.floor(interval) + ' days';
 		}
 
 		interval = seconds / 3600;
 		if (interval > 1) {
-			return Math.floor(interval) + " hours";
+			return Math.floor(interval) + ' hours';
 		}
 
 		interval = seconds / 60;
 		if (interval > 1) {
-			return Math.floor(interval) + " minutes";
+			return Math.floor(interval) + ' minutes';
 		}
 
-		return Math.floor(seconds) + " seconds";
+		return Math.floor(seconds) + ' seconds';
 	}
-
 
 	onMount(async () => {
 		if ($currentUser?.id == 'undefined' || $currentUser?.id == null) {
@@ -60,17 +59,19 @@
 		});
 		notifications = resultList.items;
 
-		unsubscribe = await pb.collection('notifications').subscribe('*', async ({ action, record }) => {
-			if (action === 'create' || action === 'update') {
-				// Fetch associated client,
-				const user = await pb.collection('users').getOne(record.user);
-				record.expand = {user };
-				notifications = [ record, ...orders];
-			}
-			if (action === 'delete') {
-				notifications = notifications.filter((m) => m.id !== record.id);
-			}
-		});
+		unsubscribe = await pb
+			.collection('notifications')
+			.subscribe('*', async ({ action, record }) => {
+				if (action === 'create' || action === 'update') {
+					// Fetch associated client,
+					const user = await pb.collection('users').getOne(record.user);
+					record.expand = { user };
+					notifications = [record, ...orders];
+				}
+				if (action === 'delete') {
+					notifications = notifications.filter((m) => m.id !== record.id);
+				}
+			});
 	});
 	// Unsubscribe from realtime orders
 	onDestroy(() => {
@@ -96,11 +97,7 @@
 				</div>
 				<div>
 					<a class="navbar-brand brand-logo" href="/">
-						<img
-							src={logo}
-							style="width: 200px; height: 120px; radius: 10%"
-							alt="logo"
-						/>
+						<img src={logo} style="width: 200px; height: 120px; radius: 10%" alt="logo" />
 					</a>
 					<li class="navbar-brand brand-logo-mini">
 						<a
@@ -131,7 +128,7 @@
 								<p class="mb-1 mt-3 font-weight-semibold">{$currentUser?.name}</p>
 								<p class="fw-light text-muted mb-0">{$currentUser?.email}</p>
 							</div>
-							<a class="dropdown-item" href="{$currentUser?.username}">
+							<a class="dropdown-item" href={$currentUser?.username}>
 								<i class="dropdown-item-icon mdi mdi-account-outline text-primary me-2"></i>
 								My Profile
 							</a>
@@ -168,19 +165,21 @@
 							aria-labelledby="notificationDropdown"
 						>
 							<div class="dropdown-item py-3 border-bottom">
-								<p class="mb-0 font-weight-medium float-left">You have {notifications.filter(notice => notice.is_read == false).length} new notifications</p>
+								<p class="mb-0 font-weight-medium float-left">
+									You have {notifications.filter((notice) => notice.is_read == false).length} new notifications
+								</p>
 								<span class="badge badge-pill badge-primary float-right">View all</span>
 							</div>
-							{#each notifications.filter(notice => notice.is_read == false) as notice}
-							<div class="dropdown-item preview-item py-3">
-								<div class="preview-thumbnail">
-									<i class="mdi mdi-information m-auto text-primary"></i>
+							{#each notifications.filter((notice) => notice.is_read == false) as notice}
+								<div class="dropdown-item preview-item py-3">
+									<div class="preview-thumbnail">
+										<i class="mdi mdi-information m-auto text-primary"></i>
+									</div>
+									<div class="preview-item-content">
+										<h6 class="preview-subject fw-normal text-dark mb-1">{notice.title}</h6>
+										<p class="fw-light small-text mb-0">{timeSince(new Date(notice.created))}</p>
+									</div>
 								</div>
-								<div class="preview-item-content">
-									<h6 class="preview-subject fw-normal text-dark mb-1">{notice.title}</h6>
-									<p class="fw-light small-text mb-0">{timeSince(new Date(notice.created))}</p>
-								</div>
-							</div>
 							{/each}
 						</div>
 					</li>
@@ -240,18 +239,14 @@
 			<nav class="sidebar sidebar-offcanvas" id="sidebar">
 				<ul class="nav mt-5">
 					{#if $currentUser?.role.includes('Admin') || $currentUser?.role.includes('Client')}
-						<li class="nav-item {($page.url.pathname === '/orders/new') ? 'active' : ''} mt-5">
+						<li class="nav-item {$page.url.pathname === '/orders/new' ? 'active' : ''} mt-5">
 							<a class="nav-link" href="/orders/new">
 								<i class="mdi mdi-grid-large menu-icon"></i>
 								<span class="menu-title">Place Order</span>
 							</a>
 						</li>
 						<li class="nav-item nav-category">Orders</li>
-						<li
-							class="nav-item {$page.url.pathname.startsWith('/orders')
-							? 'active'
-							: undefined}"
-						>
+						<li class="nav-item {$page.url.pathname.startsWith('/orders') ? 'active' : undefined}">
 							<a
 								class="nav-link"
 								data-bs-toggle="collapse"
@@ -265,7 +260,9 @@
 							</a>
 							<div class="collapse" id="orders">
 								<ul class="nav flex-column sub-menu">
-									<li class="nav-item {$page.url.pathname === '/orders/new' ? 'active' : undefined}">
+									<li
+										class="nav-item {$page.url.pathname === '/orders/new' ? 'active' : undefined}"
+									>
 										<a class="nav-link" href="/orders/new">Place Orders</a>
 									</li>
 									<li class="nav-item {$page.url.pathname === '/orders' ? 'active' : undefined}">
@@ -273,8 +270,8 @@
 									</li>
 									<li
 										class="nav-item {$page.url.pathname === '/orders/my_orders'
-										? 'active'
-										: undefined}"
+											? 'active'
+											: undefined}"
 									>
 										<a class="nav-link" href="/orders/my_orders">My Orders</a>
 									</li>
@@ -283,7 +280,10 @@
 						</li>
 						<li class="nav-item nav-category">Transactions</li>
 						<li
-							class="nav-item {$page.url.pathname.startsWith('/transactions') ? 'active' : undefined}">
+							class="nav-item {$page.url.pathname.startsWith('/transactions')
+								? 'active'
+								: undefined}"
+						>
 							<a
 								class="nav-link"
 								data-bs-toggle="collapse"
@@ -297,10 +297,16 @@
 							</a>
 							<div class="collapse" id="transactions">
 								<ul class="nav flex-column sub-menu">
-									<li class="nav-item {$page.url.pathname === '/transactions' ? 'active' : undefined}">
+									<li
+										class="nav-item {$page.url.pathname === '/transactions' ? 'active' : undefined}"
+									>
 										<a class="nav-link" href="/transactions">Make Payment</a>
 									</li>
-									<li class="nav-item {$page.url.pathname === '/transactions/my_transactions' ? 'active' : undefined}">
+									<li
+										class="nav-item {$page.url.pathname === '/transactions/my_transactions'
+											? 'active'
+											: undefined}"
+									>
 										<a class="nav-link" href="/transactions/my_transactions">My Transactions</a>
 									</li>
 								</ul>
@@ -309,11 +315,7 @@
 					{/if}
 					{#if $currentUser?.role.includes('Admin') || $currentUser?.role.includes('Writer') || $currentUser?.role.includes('Approver')}
 						<li class="nav-item nav-category">Tasks</li>
-						<li
-							class="nav-item {$page.url.pathname.startsWith('/tasks')
-							? 'active'
-							: undefined}"
-						>
+						<li class="nav-item {$page.url.pathname.startsWith('/tasks') ? 'active' : undefined}">
 							<a
 								class="nav-link"
 								data-bs-toggle="collapse"
@@ -334,8 +336,8 @@
 										>
 										<a
 											class="nav-link {$page.url.pathname === '/tasks/my_tasks'
-											? 'active'
-											: undefined}"
+												? 'active'
+												: undefined}"
 											href="/tasks/my_tasks">My Tasks</a
 										>
 									</li>
@@ -368,7 +370,7 @@
 			</nav>
 			<!-- partial -->
 			<div class="main-panel" style="height: 100px; overflow-y: scroll">
-				<div class="content-wrapper">
+				<div class="content-wrapper mt-only-sm-5">
 					<slot />
 				</div>
 				<!-- content-wrapper ends -->
@@ -376,10 +378,10 @@
 				<footer class="footer">
 					<div class="d-sm-flex justify-content-center justify-content-sm-between">
 						<span class="text-muted text-center text-sm-left d-block d-sm-inline-block"
-						>Dev Kim</span
+							>Dev Kim</span
 						>
 						<span class="float-none float-sm-end d-block mt-1 mt-sm-0 text-center"
-						>Copyright © {date.getFullYear()}. All rights reserved.</span
+							>Copyright © {date.getFullYear()}. All rights reserved.</span
 						>
 					</div>
 				</footer>
@@ -391,3 +393,12 @@
 	</div>
 	<!-- container-scroller -->
 </div>
+
+<style>
+	@media (max-width: 575.98px) {
+		/* Small devices (landscape phones, 576px and up) */
+		.mt-only-sm-5 {
+			margin-top: 3rem !important; /* 48px */
+		}
+	}
+</style>
