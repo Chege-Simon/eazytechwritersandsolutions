@@ -23,6 +23,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@paypal/paypal-js": "^8.1.0",
 		"pocketbase": "^0.21.1",
 		"quill": "^2.0.0-rc.2",
 		"svelte-file-dropzone": "^2.0.4"

@@ -95,6 +95,8 @@
 		background-color: rgba(0, 0, 0, 0.8);
 		font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
 		height: 45px;
+    z-index: 1001; /* Ensure this is higher than other elements */
+    position: relative; /* Make sure nav bar is on top */
 	}
 
 	.inner {
@@ -106,6 +108,7 @@
 		display: flex;
 		align-items: center;
 		height: 100%;
+		z-index: 1001;
 	}
 
 	.mobile-icon {

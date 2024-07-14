@@ -50,16 +50,14 @@
 	$: newOrder.amount = Math.round((newOrder.pages * 6 + Number.EPSILON) * 100) / 100;
 
 	let showConfirmPopup = false;
-
 	const onShowConfirmPopup = () => {
 		showConfirmPopup = true;
 	};
-
 	const onPopupClose = async (option) => {
 		showConfirmPopup = false;
 		if (option == 'Confirm') {
 			createOrder();
-		}
+		} 
 	};
 	async function createOrder() {
 		try {
@@ -68,7 +66,7 @@
 			newOrder.deadline_range_start = new Date(newOrder.deadline_range_start);
 			newOrder.deadline_range_end = new Date(newOrder.deadline_range_end);
 			await pb.collection('orders').create(newOrder);
-			goto('/orders/my_orders');
+			goto('/transactions');
 		} catch (err) {
 			console.log(err);
 		}
@@ -345,6 +343,7 @@
 </div>
 
 <Modal
+	<Modal
 	open={showConfirmPopup}
 	onClosed={(option) => onPopupClose(option)}
 	title={'Confirm Order'}
@@ -401,6 +400,15 @@
 								) / 100}
 							</p>
 							<p><small>based on $6 per page</small></p>
+						</div>
+						<div class="mt-4">
+							<div class="fs-4 fw-bold mb-1">
+								<strong>Please Deposit: </strong>
+								<p>
+									${Math.round((newOrder.amount + Number.EPSILON) * 100) / 100 / 2}
+									for order to proceed.
+								</p>
+							</div>
 						</div>
 					</div>
 				</div>

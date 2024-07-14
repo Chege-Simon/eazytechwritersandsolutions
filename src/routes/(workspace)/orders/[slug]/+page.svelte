@@ -1,9 +1,9 @@
 <script>
+	import { goto } from '$app/navigation';
 	import { currentUser, pb } from '$lib/pocketbase.js';
+	import { redirect } from '@sveltejs/kit';
 	import { onDestroy, onMount } from 'svelte';
 	import Dropzone from 'svelte-file-dropzone';
-	import { redirect } from '@sveltejs/kit';
-    import { goto } from '$app/navigation';
 	export let data;
 
 	let order = {};
@@ -30,10 +30,9 @@
 	let service_types = [];
 	let education_levels = [];
 
-
 	onMount(async () => {
 		order = data.order;
-		if(order.deadline_range_start < Date.now()) {
+		if (order.deadline_range_start < Date.now()) {
 			order.is_delayed = 'true';
 			await pb.collection('orders').update(order.id, order);
 		}
@@ -43,8 +42,7 @@
 			modules: {
 				toolbar: true
 			},
-			placeholder:
-				order.insturctions,
+			placeholder: order.insturctions,
 			theme: 'snow'
 		};
 		quill = new Quill('#editor', options);
@@ -61,21 +59,23 @@
 		});
 		education_levels = [...records];
 
-
 		files.accepted = [...files.accepted, ...order.attached_files];
-		order.deadline_range_start = order.deadline_range_start.toString().split('.')[0].replace(' ', 'T');
+		order.deadline_range_start = order.deadline_range_start
+			.toString()
+			.split('.')[0]
+			.replace(' ', 'T');
 		order.deadline_range_end = order.deadline_range_end.toString().split('.')[0].replace(' ', 'T');
 		order.line_spacing = order.line_spacing.toString();
 	});
 	async function updateOrder() {
-		try{
+		try {
 			order.attached_files = files.accepted;
 			order.insturctions = quill.root.innerHTML;
 			order.deadline_range_start = new Date(order.deadline_range_start);
 			order.deadline_range_end = new Date(order.deadline_range_end);
 			await pb.collection('orders').update(order.id, order);
 			goto('/orders/my_orders');
-		}catch (err) {
+		} catch (err) {
 			console.log(err);
 		}
 	}
@@ -92,7 +92,7 @@
 		<p class="card-description">Please fill your order requirements</p>
 		<form class="forms-sample row" enctype="multipart/form-data">
 			<div class="form-group col-12">
-				<label for="Attach Files" class="form-label col-sm-2">Attach Files:</label>
+				<label for="Attach Files" class="form-label fw-bolder col-sm-2">Attach Files:</label>
 				<br />
 				<small class="form-text text-muted fst-italic" style="font-size: 0.7rem">
 					<i class="mdi mdi-alert-circle-outline"></i>
@@ -132,12 +132,12 @@
 			</div>
 			<!-- Create the editor container -->
 			<div class="form-group col-12" style="height: 100%">
-				<label for="instructions" class="form-label col-sm-2">Instructions:</label>
+				<label for="instructions" class="form-label fw-bolder col-sm-2">Instructions:</label>
 				<div id="editor" class="form-control mb-5"></div>
 			</div>
 			<div class="col-md-12">
 				<div class="form-group row">
-					<label for="field_of_study" class="form-label col-sm-12">Field Of Study:</label>
+					<label for="field_of_study" class="form-label fw-bolder col-sm-12">Field Of Study:</label>
 					<input
 						type="text"
 						class="form-control"
@@ -149,14 +149,9 @@
 			</div>
 			<div class="col-md-6">
 				<div class="form-group row">
-					<label for="service_type" class="form-label col-sm-2">Service Type</label>
+					<label for="service_type" class="form-label fw-bolder col-sm-2">Service Type</label>
 					<div class="col-sm-10">
-						<select
-							class="form-control"
-							id="service_type"
-							bind:value={order.service_type}
-							required
-						>
+						<select class="form-control" id="service_type" bind:value={order.service_type} required>
 							<option value={null}>Select Service Type</option>
 							{#each service_types as service_type}
 								<option value={service_type.id}>
@@ -167,7 +162,7 @@
 					</div>
 				</div>
 				<div class="form-group row">
-					<label for="education_level" class="form-label col-sm-2">Education Level</label>
+					<label for="education_level" class="form-label fw-bolder col-sm-2">Education Level</label>
 					<div class="col-sm-10">
 						<select
 							class="form-control"
@@ -185,10 +180,10 @@
 					</div>
 				</div>
 				<div class="form-group">
-					<label for="assignment_size" class="form-label">Assignment Size</label>
+					<label for="assignment_size" class="form-label fw-bolder">Assignment Size</label>
 					<div class="row">
 						<div class="col-sm-4">
-							<label for="pages" class="form-label">Pages:</label>
+							<label for="pages" class="form-label fw-bolder">Pages:</label>
 							<input
 								type="number"
 								class="form-control"
@@ -198,7 +193,7 @@
 							/>
 						</div>
 						<div class="col-sm-4">
-							<label for="words" class="form-label">Words:</label>
+							<label for="words" class="form-label fw-bolder">Words:</label>
 							<input
 								type="number"
 								class="form-control"
@@ -208,7 +203,7 @@
 							/>
 						</div>
 						<div class="col-sm-4">
-							<label for="line_spacing" class="form-label">Line Spacing:</label>
+							<label for="line_spacing" class="form-label fw-bolder">Line Spacing:</label>
 							<select
 								class="form-control"
 								id="line_spacing"
@@ -226,11 +221,10 @@
 			</div>
 			<div class="col-md-6">
 				<div class="form-group row">
-					<label for="education_level" class="form-label col-sm-12">Deadline</label>
+					<label for="education_level" class="form-label fw-bolder col-sm-12">Deadline</label>
 					<div class="my-3 col-sm-12">
-						<label for="deadline_range_start" class="form-label">Date Range Start:</label>
+						<label for="deadline_range_start" class="form-label fw-bolder">Date Range Start:</label>
 						<input
-
 							type="datetime-local"
 							class="form-control"
 							id="deadline_range_start"
@@ -238,9 +232,8 @@
 						/>
 					</div>
 					<div class="my-3 col-sm-12">
-						<label for="deadline_range_end" class="form-label">Date Range End:</label>
+						<label for="deadline_range_end" class="form-label fw-bolder">Date Range End:</label>
 						<input
-
 							type="datetime-local"
 							class="form-control"
 							id="deadline_range_end"
@@ -251,13 +244,15 @@
 			</div>
 			<div class="col-md-12">
 				<div class="form-group row">
-					<label for="title" class="form-label col-sm-12">Assignment Title:</label>
+					<label for="title" class="form-label fw-bolder col-sm-12">Assignment Title:</label>
 					<input type="text" class="form-control" id="title" bind:value={order.title} required />
 				</div>
 			</div>
 			<div class="col-md-12">
 				<div class="form-group row">
-					<label for="description" class="form-label col-sm-12">Assignment Description:</label>
+					<label for="description" class="form-label fw-bolder col-sm-12"
+						>Assignment Description:</label
+					>
 					<textarea
 						rows="4"
 						cols="50"
@@ -268,10 +263,10 @@
 				</div>
 			</div>
 			<div class="form-group">
-				<label for="assignment_size" class="form-label">Sources and Citation Style</label>
+				<label for="assignment_size" class="form-label fw-bolder">Sources and Citation Style</label>
 				<div class="row">
 					<div class="col-sm-4">
-						<label for="sources" class="form-label">Sources:</label>
+						<label for="sources" class="form-label fw-bolder">Sources:</label>
 						<input
 							required
 							type="number"
@@ -281,7 +276,7 @@
 						/>
 					</div>
 					<div class="col-sm-4">
-						<label for="citation_type" class="form-label">Citation Style:</label>
+						<label for="citation_type" class="form-label fw-bolder">Citation Style:</label>
 						<select
 							class="form-control"
 							id="citation_type"
