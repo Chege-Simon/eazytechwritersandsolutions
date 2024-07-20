@@ -29,6 +29,8 @@
 
 	let service_types = [];
 	let education_levels = [];
+	$: order.pages = Math.round((order.words / 275 + Number.EPSILON) * 100) / 100;
+	$: order.amount = Math.round((order.pages * 6 + Number.EPSILON) * 100) / 100;
 
 	onMount(async () => {
 		order = data.order;
@@ -193,16 +195,19 @@
 							/>
 						</div>
 						<div class="col-sm-4">
-							<label for="words" class="form-label fw-bolder">Words:</label>
+							<label for="pages" class="form-label fw-bolder"
+								>Estimated No. of Pages based on (275 words per page):</label
+							>
 							<input
 								type="number"
 								class="form-control"
-								id="words"
-								bind:value={order.words}
+								id="pages"
+								disabled
+								bind:value={order.pages}
 								required
 							/>
 						</div>
-						<div class="col-sm-4">
+						<!-- <div class="col-sm-4">
 							<label for="line_spacing" class="form-label fw-bolder">Line Spacing:</label>
 							<select
 								class="form-control"
@@ -215,7 +220,7 @@
 								<option value="1.5">1.5</option>
 								<option value="2">2</option>
 							</select>
-						</div>
+						</div> -->
 					</div>
 				</div>
 			</div>
@@ -229,6 +234,7 @@
 							class="form-control"
 							id="deadline_range_start"
 							bind:value={order.deadline_range_start}
+							min={new Date(Date.now() + 24 * 60 * 60 * 1000).toISOString().split('.')[0] + 'Z'}
 						/>
 					</div>
 					<div class="my-3 col-sm-12">
@@ -238,6 +244,7 @@
 							class="form-control"
 							id="deadline_range_end"
 							bind:value={order.deadline_range_end}
+							min={new Date(Date.now() + 24 * 60 * 60 * 1000).toISOString().split('.')[0] + 'Z'}
 						/>
 					</div>
 				</div>
@@ -266,7 +273,7 @@
 				<label for="assignment_size" class="form-label fw-bolder">Sources and Citation Style</label>
 				<div class="row">
 					<div class="col-sm-4">
-						<label for="sources" class="form-label fw-bolder">Sources:</label>
+						<label for="sources" class="form-label fw-bolder">No. of Sources/Citations:</label>
 						<input
 							required
 							type="number"

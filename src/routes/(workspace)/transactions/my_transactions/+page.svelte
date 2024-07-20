@@ -312,6 +312,7 @@
 								<option value={null}>Select</option>
 								<option value="PayPal">PayPal</option>
 								<option value="M-pesa">M-pesa</option>
+								<option value="World Remit">World Remit</option>
 							</select>
 						</div>
 					</div>

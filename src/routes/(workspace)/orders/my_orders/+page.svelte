@@ -149,14 +149,22 @@
 							</td>
 							<td>
 								{#if order.amount_paid <= order.amount / 2}
-									<!-- svelte-ignore a11y-click-events-have-key-events -->
-									<!-- svelte-ignore a11y-no-static-element-interactions -->
-									<!-- svelte-ignore a11y-missing-attribute -->
-									<a
-										class="badge btn-inverse-primary"
-										style="cursor: pointer;"
-										href="/orders/{order.id}">Edit</a
-									>
+								<!-- svelte-ignore a11y-click-events-have-key-events -->
+								<!-- svelte-ignore a11y-no-static-element-interactions -->
+								<!-- svelte-ignore a11y-missing-attribute -->
+								<a
+									class="badge btn-inverse-success"
+									style="cursor: pointer;"
+									href="/transactions/{order.id}">Pay</a
+								>
+								<!-- svelte-ignore a11y-click-events-have-key-events -->
+								<!-- svelte-ignore a11y-no-static-element-interactions -->
+								<!-- svelte-ignore a11y-missing-attribute -->
+								<a
+									class="badge btn-inverse-primary"
+									style="cursor: pointer;"
+									href="/orders/{order.id}">Edit</a
+								>
 									<!-- svelte-ignore a11y-click-events-have-key-events -->
 									<!-- svelte-ignore a11y-no-static-element-interactions -->
 									<!-- svelte-ignore a11y-missing-attribute -->
@@ -175,6 +183,14 @@
 										target="_blank"
 										rel="noreferrer"
 										class="badge btn-inverse-success">Preview</a
+									>
+									<!-- svelte-ignore a11y-click-events-have-key-events -->
+									<!-- svelte-ignore a11y-no-static-element-interactions -->
+									<!-- svelte-ignore a11y-missing-attribute -->
+									<a
+										class="badge btn-inverse-success"
+										style="cursor: pointer;"
+										href="/transactions/{order.id}">Pay</a
 									>
 								{:else if ($currentUser.role.includes('Client') || $currentUser.role.includes('Admin')) && order.amount_paid >= order.amount}
 									<a

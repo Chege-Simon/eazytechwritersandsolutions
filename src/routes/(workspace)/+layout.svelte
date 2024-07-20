@@ -297,11 +297,11 @@
 							</a>
 							<div class="collapse" id="transactions">
 								<ul class="nav flex-column sub-menu">
-									<li
+									<!-- <li
 										class="nav-item {$page.url.pathname === '/transactions' ? 'active' : undefined}"
 									>
 										<a class="nav-link" href="/transactions">Make Payment</a>
-									</li>
+									</li> -->
 									<li
 										class="nav-item {$page.url.pathname === '/transactions/my_transactions'
 											? 'active'
