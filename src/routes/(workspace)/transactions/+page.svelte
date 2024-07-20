@@ -26,10 +26,10 @@
 					},
 					onApprove: async function (data, actions) {
 						const details = await actions.order.capture();
-						alert('Payment successful!');
+						// alert('Payment successful!');
+						console.log('Payment Success => ', details);
 					},
 					onError: function (err) {
-						alert('Something went wrong ', err);
 						console.log('Something went wrong', err);
 					}
 				})
