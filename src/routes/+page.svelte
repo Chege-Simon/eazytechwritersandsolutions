@@ -179,8 +179,8 @@
 												<p class="mb-2">Please speak with us directly.</p>
 												<hr class="w-75 mb-3 border-dark-subtle" />
 												<p class="mb-0">
-													<a class="link-primary text-decoration-none" href="tel:+254712345678"
-														>(254) 712345678</a
+													<a class="link-primary text-decoration-none" href="tel:+254714222996"
+														>(254) 714222996</a
 													>
 												</p>
 											</div>
@@ -212,7 +212,7 @@
 												<p class="mb-0">
 													<a
 														class="link-primary text-decoration-none"
-														href="mailto:demo@yourdomain.com">demo@yourdomain.com</a
+														href="mailto:eazytechhq@outlook.com">eazytechhq@outlook.com</a
 													>
 												</p>
 											</div>

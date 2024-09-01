@@ -15,7 +15,8 @@
 		hours < 12 ? 'Good Morning' : hours <= 18 && hours >= 12 ? 'Good Afternoon' : 'Good Evening';
 	function signOut() {
 		pb.authStore.clear();
-		goto('/');
+		// goto('/');
+		window.location.href = '/';
 	}
 	function timeSince(date) {
 		var seconds = Math.floor((new Date() - date) / 1000);
@@ -51,7 +52,8 @@
 	onMount(async () => {
 		if ($currentUser?.id == 'undefined' || $currentUser?.id == null) {
 			pb.authStore.clear();
-			goto('/');
+			// goto('/');
+		window.location.href = '/';
 		}
 		const resultList = await pb.collection('notifications').getList(current_page, per_page, {
 			sort: '-created',

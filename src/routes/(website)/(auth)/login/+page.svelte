@@ -14,9 +14,10 @@
 			const response = await pb
 				.collection('users')
 				.authWithPassword(userLogin.email, userLogin.password);
-			console.log(response);
+			// console.log(response);
 			if (response.token && pb.authStore.isValid) {
-				goto('/orders/new');
+				// goto('/orders/new');
+				window.location.href = '/orders/new';
 			}
 		} catch (err) {
 			error = err.data.data;

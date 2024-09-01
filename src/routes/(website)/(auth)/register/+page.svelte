@@ -14,7 +14,8 @@
 	// 	const user = await pb.collection('users').authWithPassword(newUser.name, newUser.password);
 	// 	// console.log(user);
 	// 	if (createdUser.token) {
-	// 		goto('/orders/new');
+	// // 		goto('/orders/new');
+	// 	window.location.href = '/';
 	// 	}
 	// }
 	async function signUp() {

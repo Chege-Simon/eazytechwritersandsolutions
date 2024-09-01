@@ -10,7 +10,8 @@
 
 	function signOut() {
 		pb.authStore.clear();
-		goto('/');
+		// goto('/');
+		window.location.href = '/';
 	}
 
 	function setActiveItemPosition() {

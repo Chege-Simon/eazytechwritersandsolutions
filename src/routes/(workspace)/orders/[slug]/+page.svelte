@@ -76,7 +76,8 @@
 			order.deadline_range_start = new Date(order.deadline_range_start);
 			order.deadline_range_end = new Date(order.deadline_range_end);
 			await pb.collection('orders').update(order.id, order);
-			goto('/orders/my_orders');
+			// goto('/orders/my_orders');
+			window.location.href = '/orders/my_orders';
 		} catch (err) {
 			console.log(err);
 		}

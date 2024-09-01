@@ -15,17 +15,20 @@
 	const resetPassword = async (email) => {
 		await pb.collection('users').requestPasswordReset(email);
 		pb.authStore.clear();
-		goto('/login');
+		// goto('/login');
+		window.location.href = '/login';
 	};
 	const changeEmail = async (email) => {
 		await pb.collection('users').requestEmailChange(email);
 		pb.authStore.clear();
-		goto('/login');
+		// goto('/login');
+		window.location.href = '/login';
 	};
 	async function updateOrder() {
 		try {
 			await pb.collection('users').update(user.id, user);
-			goto('/users/my_users');
+			// goto('/users/my_users');
+			window.location.href = '/users/my_users';
 		} catch (err) {
 			console.log(err);
 		}

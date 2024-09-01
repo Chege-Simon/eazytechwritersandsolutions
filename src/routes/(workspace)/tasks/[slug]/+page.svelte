@@ -59,7 +59,8 @@
 			}else if(task.status == 'client_review'){
 				await readyForClientReview();
 			}
-			goto('/tasks');
+			// goto('/tasks');
+			window.location.href = '/tasks';
 		} catch (err) {
 			console.log(err);
 		}

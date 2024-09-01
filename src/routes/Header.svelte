@@ -7,7 +7,8 @@
 
 	function signOut() {
 		pb.authStore.clear();
-		goto('/');
+		// goto('/');
+		window.location.href = '/';
 	}
 
 	// Show mobile icon and display menu

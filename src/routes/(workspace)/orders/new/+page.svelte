@@ -66,7 +66,8 @@
 			newOrder.deadline_range_start = new Date(newOrder.deadline_range_start);
 			newOrder.deadline_range_end = new Date(newOrder.deadline_range_end);
 			await pb.collection('orders').create(newOrder);
-			goto('/transactions/' + newOrder.id);
+			// goto('/transactions/' + newOrder.id);
+			window.location.href = '/transactions/' + newOrder.id;
 		} catch (err) {
 			console.log(err);
 		}

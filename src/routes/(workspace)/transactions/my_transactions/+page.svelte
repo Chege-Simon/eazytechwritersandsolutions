@@ -60,7 +60,8 @@
 			await pb.collection('orders').update(select_order.id, {
 				current_task: response.id
 			});
-			goto('/transactions/my_transactions');
+			// goto('/transactions/my_transactions');
+			window.location.href = '/transactions/my_transactions';
 		} catch (err) {
 			console.log(err);
 		}
