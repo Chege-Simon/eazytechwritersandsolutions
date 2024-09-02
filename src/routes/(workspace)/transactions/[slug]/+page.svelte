@@ -148,8 +148,8 @@
 					<p>If you'd like to send money securely and conveniently, follow these steps:</p>
 					<p>Recipient Details:</p>
 					<div class="alert alert-secondary text-primary" role="alert">
-						Recipient's Name: [Recipient's Full Name]<br />
-						Recipient's Location: U.K
+						Recipient's Name: MARY WAIRIMU MWITHIGA<br />
+						Recipient's Phone Number: +254714222996
 					</div>
 					<p>Instructions for Sending Money:</p>
 					<ol>

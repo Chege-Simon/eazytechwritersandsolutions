@@ -35,88 +35,713 @@
 			</div>
 		</div>
 	</header>
-
-	<!-- Featured Products -->
-	<section id="featured-services" class="py-5">
-		<div class="container px-4 py-5" id="custom-cards">
-			<h1 class="pb-2 border-bottom">Our Services</h1>
-
-			<div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
-				<div class="col">
-					<div
-						class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg"
-						style="background-image:  linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url({service1});
-						 background-repeat: no-repeat; background-size: cover"
-					>
-						<div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
-							<h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Short title, long jacket</h2>
-							<ul class="d-flex list-unstyled mt-auto">
-								<li class="me-auto">
-									<img
-										src={logo}
-										alt="Bootstrap"
-										width="32"
-										height="32"
-										class="rounded-circle border border-white"
-									/>
-								</li>
-							</ul>
-						</div>
-					</div>
+	<!-- Services section -->
+	<section class="bg-light py-3 py-md-5 py-xl-8">
+		<div class="container">
+			<div class="row justify-content-md-center">
+				<div class="col-12 col-md-10 col-lg-8 col-xl-7 col-xxl-6">
+					<h1 class="pb-2 border-bottom">Our Services</h1>
+					<p class="text-dark mb-5 text-center lead fs-4">
+						We offer a comprehensive range of services to help you with academic writing, content
+						creation, web design, and web development needs.
+					</p>
+					<hr class="w-50 mx-auto mb-5 mb-xl-9 border-dark-subtle" />
 				</div>
+			</div>
+		</div>
 
-				<div class="col">
-					<div
-						class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg"
-						style="background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url({service2});
-						 background-repeat: no-repeat; background-size: cover"
-					>
-						<div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
-							<h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">
-								Much longer title that wraps to multiple lines
-							</h2>
-							<ul class="d-flex list-unstyled mt-auto">
-								<li class="me-auto">
-									<img
-										src={logo}
-										alt="Bootstrap"
-										width="32"
-										height="32"
-										class="rounded-circle border border-white"
-									/>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div>
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<div class="container-fluid">
+						<div class="row gy-3 gy-md-4">
+							<!-- Academic Writing Services -->
+							<div class="col-12 col-md-6 col-lg-4">
+								<div class="card border-dark">
+									<div class="card-body text-center p-4 p-xxl-5">
+										<svg
+											xmlns="http://www.w3.org/2000/svg"
+											width="48"
+											height="48"
+											fill="currentColor"
+											class="bi bi-pencil-square text-primary mb-4"
+											viewBox="0 0 16 16"
+										>
+											<path
+												d="M15.502 1.94a.5.5 0 0 1 0 .706l-1.75 1.75-2.208-2.208 1.75-1.75a.5.5 0 0 1 .707 0l1.5 1.5zM13.765 3.676l-2.208-2.207-7.678 7.678a.5.5 0 0 0-.121.196l-.805 2.414a.5.5 0 0 0 .63.63l2.414-.805a.5.5 0 0 0 .196-.12l7.678-7.678zM11.5 5.5v6.5a1 1 0 0 1-1 1h-8a1 1 0 0 1-1-1v-8a1 1 0 0 1 1-1H5.5a.5.5 0 0 0 0-1H2.5a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V7.5a.5.5 0 0 0-1 0z"
+											/>
+										</svg>
 
-				<div class="col">
-					<div
-						class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg"
-						style="background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url({service3});
-						 background-repeat: no-repeat; background-size: cover"
-					>
-						<div class="d-flex flex-column h-100 p-5 pb-3 text-shadow-1">
-							<h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">
-								Another longer title belongs here
-							</h2>
-							<ul class="d-flex list-unstyled mt-auto">
-								<li class="me-auto">
-									<img
-										src={logo}
-										alt="Bootstrap"
-										width="32"
-										height="32"
-										class="rounded-circle border border-white"
-									/>
-								</li>
-							</ul>
+										<h4 class="mb-4">Academic Writing Services</h4>
+										<p class="mb-4">
+											Expert assistance with essays, research papers, theses, and more to meet your
+											academic needs.
+										</p>
+										<button
+											type="button"
+											class="btn btn-outline-primary bsb-btn-circle"
+											data-bs-toggle="modal"
+											data-bs-target="#modalAcademicWriting"
+										>
+											Read More
+										</button>
+									</div>
+								</div>
+							</div>
+
+							<!-- Content Writing Services -->
+							<div class="col-12 col-md-6 col-lg-4">
+								<div class="card border-dark">
+									<div class="card-body text-center p-4 p-xxl-5">
+										<svg
+											xmlns="http://www.w3.org/2000/svg"
+											width="48"
+											height="48"
+											fill="currentColor"
+											class="bi bi-file-earmark-text-fill text-primary mb-4"
+											viewBox="0 0 16 16"
+										>
+											<path
+												d="M9.293 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V5.707a1 1 0 0 0-.293-.707L10 0.293A1 1 0 0 0 9.293 0zm-3.5 9.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5zm4-4.5V1.5a.5.5 0 0 1 .5.5H9v2a1 1 0 0 0 1 1h2v7.5a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h4v2.5z"
+											/>
+										</svg>
+
+										<h4 class="mb-4">Content Writing Services</h4>
+										<p class="mb-4">
+											Professional content creation, including articles, copywriting, SEO content,
+											and more.
+										</p>
+										<button
+											type="button"
+											class="btn btn-outline-primary bsb-btn-circle"
+											data-bs-toggle="modal"
+											data-bs-target="#modalContentWriting"
+										>
+											Read More
+										</button>
+									</div>
+								</div>
+							</div>
+
+							<!-- Web Design Services -->
+							<div class="col-12 col-md-6 col-lg-4">
+								<div class="card border-dark">
+									<div class="card-body text-center p-4 p-xxl-5">
+										<svg
+											xmlns="http://www.w3.org/2000/svg"
+											width="48"
+											height="48"
+											fill="currentColor"
+											class="bi bi-display-fill text-primary mb-4"
+											viewBox="0 0 16 16"
+										>
+											<path
+												d="M0 3a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-4v1h1.5a.5.5 0 0 1 0 1h-7a.5.5 0 0 1 0-1H6v-1H2a2 2 0 0 1-2-2V3zm13 9a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h10z"
+											/>
+										</svg>
+
+										<h4 class="mb-4">Web Design Services</h4>
+										<p class="mb-4">
+											Custom website design, UI/UX design, and responsive design for all devices.
+										</p>
+										<button
+											type="button"
+											class="btn btn-outline-primary bsb-btn-circle"
+											data-bs-toggle="modal"
+											data-bs-target="#modalWebDesign"
+										>
+											Read More
+										</button>
+									</div>
+								</div>
+							</div>
+
+							<!-- Web Development Services -->
+							<div class="col-12 col-md-6 col-lg-4">
+								<div class="card border-dark">
+									<div class="card-body text-center p-4 p-xxl-5">
+										<svg
+											xmlns="http://www.w3.org/2000/svg"
+											width="48"
+											height="48"
+											fill="currentColor"
+											viewBox="0 0 24 24"
+											class="bi bi-code-slash text-primary mb-4"
+										>
+											<path
+												d="M16.5 3.5a.5.5 0 0 1 0 .707L9.207 11.5l7.293 7.293a.5.5 0 0 1-.708.707l-7.5-7.5a.5.5 0 0 1 0-.707l7.5-7.5a.5.5 0 0 1 .708 0zM7.5 3.5a.5.5 0 0 0-.707 0l-7.5 7.5a.5.5 0 0 0 0 .707l7.5 7.5a.5.5 0 0 0 .707-.707L1.207 11.5l6.293-6.293a.5.5 0 0 0 0-.707z"
+											/>
+										</svg>
+										<h4 class="mb-4">Web Development Services</h4>
+										<p class="mb-4">
+											Full-stack development, eCommerce, CMS, and custom web applications tailored
+											to your needs.
+										</p>
+										<button
+											type="button"
+											class="btn btn-outline-primary bsb-btn-circle"
+											data-bs-toggle="modal"
+											data-bs-target="#modalWebDevelopment"
+										>
+											Read More
+										</button>
+									</div>
+								</div>
+							</div>
+
+							<!-- Digital Marketing and SEO Services -->
+							<div class="col-12 col-md-6 col-lg-4">
+								<div class="card border-dark">
+									<div class="card-body text-center p-4 p-xxl-5">
+										<svg
+											xmlns="http://www.w3.org/2000/svg"
+											width="48"
+											height="48"
+											fill="currentColor"
+											class="bi bi-bar-chart-fill text-primary mb-4"
+											viewBox="0 0 16 16"
+										>
+											<path
+												d="M1 13.5a.5.5 0 0 1 .5-.5h12a.5.5 0 0 1 0 1h-12a.5.5 0 0 1-.5-.5zm3-2a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 0 1h-8a.5.5 0 0 1-.5-.5zm3-2a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm3-2a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5z"
+											/>
+										</svg>
+										<h4 class="mb-4">Digital Marketing and SEO</h4>
+										<p class="mb-4">
+											Optimize your online presence with our SEO, social media management, and
+											digital marketing strategies.
+										</p>
+										<button
+											type="button"
+											class="btn btn-outline-primary bsb-btn-circle"
+											data-bs-toggle="modal"
+											data-bs-target="#modalMarketingSEO"
+										>
+											Read More
+										</button>
+									</div>
+								</div>
+							</div>
+
+							<!-- Consultation and Training Services -->
+							<div class="col-12 col-md-6 col-lg-4">
+								<div class="card border-dark">
+									<div class="card-body text-center p-4 p-xxl-5">
+										<svg
+											xmlns="http://www.w3.org/2000/svg"
+											width="48"
+											height="48"
+											fill="currentColor"
+											viewBox="0 0 24 24"
+											class="bi bi-chat text-primary mb-4"
+										>
+											<path
+												d="M12 3C7.03 3 3 6.58 3 11C3 12.64 3.58 14.18 4.58 15.42L3.02 19.32C2.91 19.69 3.12 20.07 3.49 20.19C3.65 20.24 3.81 20.25 3.96 20.2L7.85 18.65C9.18 19.49 10.81 20 12.5 20C17.47 20 21.5 16.42 21.5 12C21.5 7.58 17.47 4 12 4L12 3Z"
+											/>
+										</svg>
+
+										<h4 class="mb-4">Consultation and Training</h4>
+										<p class="mb-4">
+											Expert consultations and training workshops in academic tutoring, web
+											technologies, and business strategy.
+										</p>
+										<button
+											type="button"
+											class="btn btn-outline-primary bsb-btn-circle"
+											data-bs-toggle="modal"
+											data-bs-target="#modalConsultationTraining"
+										>
+											Read More
+										</button>
+									</div>
+								</div>
+							</div>
+
+							<!-- Custom Software Development -->
+							<div class="col-12 col-md-6 col-lg-4">
+								<div class="card border-dark">
+									<div class="card-body text-center p-4 p-xxl-5">
+										<svg
+											xmlns="http://www.w3.org/2000/svg"
+											width="48"
+											height="48"
+											fill="currentColor"
+											class="bi bi-window-code text-primary mb-4"
+											viewBox="0 0 16 16"
+										>
+											<path
+												d="M2.5 3a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5h11a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-11zm0-1h11A1.5 1.5 0 0 1 15 3.5v9a1.5 1.5 0 0 1-1.5 1.5h-11A1.5 1.5 0 0 1 1 12.5v-9A1.5 1.5 0 0 1 2.5 2z"
+											/>
+											<path
+												d="M4.854 4.646a.5.5 0 1 0-.708.708L6.293 7 4.146 9.146a.5.5 0 0 0 .708.708l2.5-2.5a.5.5 0 0 0 0-.708l-2.5-2.5zm4.292 0a.5.5 0 0 0-.708.708L9.707 7 7.854 8.854a.5.5 0 0 0 .708.708l2.5-2.5a.5.5 0 0 0 0-.708l-2.5-2.5z"
+											/>
+										</svg>
+										<h4 class="mb-4">Custom Software Development</h4>
+										<p class="mb-4">
+											Building tailored software solutions, mobile apps, and automation tools to
+											enhance your business.
+										</p>
+										<button
+											type="button"
+											class="btn btn-outline-primary bsb-btn-circle"
+											data-bs-toggle="modal"
+											data-bs-target="#modalSoftwareDevelopment"
+										>
+											Read More
+										</button>
+									</div>
+								</div>
+							</div>
+
+							<!-- Project Management and QA -->
+							<div class="col-12 col-md-6 col-lg-4">
+								<div class="card border-dark">
+									<div class="card-body text-center p-4 p-xxl-5">
+										<svg
+											xmlns="http://www.w3.org/2000/svg"
+											width="48"
+											height="48"
+											fill="currentColor"
+											class="bi bi-check-circle-fill text-primary mb-4"
+											viewBox="0 0 16 16"
+										>
+											<path
+												d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM6.5 11.796l-3-3a.5.5 0 1 0-.707.707l3.5 3.5a.5.5 0 0 0 .707 0l7-7a.5.5 0 0 0-.707-.707l-6.647 6.647z"
+											/>
+										</svg>
+										<h4 class="mb-4">Project Management and QA</h4>
+										<p class="mb-4">
+											Professional project management and quality assurance services to ensure
+											successful project outcomes.
+										</p>
+										<button
+											type="button"
+											class="btn btn-outline-primary bsb-btn-circle"
+											data-bs-toggle="modal"
+											data-bs-target="#modalProjectManagementQA"
+										>
+											Read More
+										</button>
+									</div>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</section>
+
+	<!-- Modals -->
+
+	<!-- Academic Writing Modal -->
+	<div
+		class="modal fade"
+		id="modalAcademicWriting"
+		tabindex="-1"
+		aria-labelledby="modalAcademicWritingLabel"
+		aria-hidden="true"
+	>
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="modalAcademicWritingLabel">Academic Writing Services</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+					></button>
+				</div>
+				<div class="modal-body">
+					We provide a wide range of academic writing services:
+					<ul>
+						<li>
+							<strong>Essay Writing:</strong> Custom-written essays on various topics, tailored to academic
+							requirements.
+						</li>
+						<li>
+							<strong>Assignment Help: </strong>Assistance with homework, case studies, lab reports,
+							and other academic assignments.
+						</li>
+						<li>
+							<strong>Research Paper Writing: </strong>In-depth research and writing for academic
+							papers, including sourcing, referencing, and structuring.
+						</li>
+						<li>
+							<strong>Thesis/Dissertation Assistance:</strong> Guidance or complete writing services
+							for graduate and post-graduate theses and dissertations.
+						</li>
+						<li>
+							<strong>Editing and Proofreading: </strong>Reviewing and refining written work to
+							ensure clarity, coherence, and grammatical accuracy.
+						</li>
+						<li>
+							<strong>Plagiarism Checking: </strong>Ensuring content originality using plagiarism
+							detection software.
+						</li>
+					</ul>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Content Writing Modal -->
+	<div
+		class="modal fade"
+		id="modalContentWriting"
+		tabindex="-1"
+		aria-labelledby="modalContentWritingLabel"
+		aria-hidden="true"
+	>
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="modalContentWritingLabel">Content Writing Services</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+					></button>
+				</div>
+				<div class="modal-body">
+					Our content writing services cover a broad spectrum:
+					<ul>
+						<li>
+							<strong>Article Writing:</strong> Creating informative and engaging articles for blogs,
+							magazines, or online publications.
+						</li>
+						<li>
+							<strong>Copywriting:</strong> Writing persuasive and impactful copy for marketing materials,
+							websites, and ads.
+						</li>
+						<li>
+							<strong>Content Strategy:</strong> Developing content strategies that align with marketing
+							goals and audience needs.
+						</li>
+						<li>
+							<strong>SEO Content Writing:</strong> Writing search engine optimized content to improve
+							website rankings.
+						</li>
+						<li>
+							<strong>Technical Writing:</strong> Producing manuals, guides, and documentation for products
+							or services.
+						</li>
+						<li>
+							<strong>Ghostwriting:</strong> Writing content on behalf of someone else, often for blogs,
+							books, or speeches.
+						</li>
+					</ul>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Web Design Modal -->
+	<div
+		class="modal fade"
+		id="modalWebDesign"
+		tabindex="-1"
+		aria-labelledby="modalWebDesignLabel"
+		aria-hidden="true"
+	>
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="modalWebDesignLabel">Web Design Services</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+					></button>
+				</div>
+				<div class="modal-body">
+					We specialize in custom website design, ensuring that your site is visually appealing and
+					user-friendly. Our services include:
+					<ul>
+						<li>
+							<strong>Custom Website Design:</strong> Designing visually appealing and user-friendly
+							websites tailored to client needs.
+						</li>
+						<li>
+							<strong>UI/UX Design:</strong> Creating intuitive and attractive user interfaces and enhancing
+							user experiences.
+						</li>
+						<li>
+							<strong>Responsive Design:</strong> Ensuring websites work well on all devices (mobile,
+							tablet, desktop).
+						</li>
+						<li>
+							<strong>Graphic Design:</strong> Crafting logos, banners, and other visual elements for
+							web use.
+						</li>
+						<li>
+							<strong>Website Redesign:</strong> Updating and modernizing existing websites to improve
+							aesthetics and functionality.
+						</li>
+						<li>
+							<strong>Landing Page Design:</strong> Designing focused landing pages optimized for conversion.
+						</li>
+					</ul>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Web Development Modal -->
+	<div
+		class="modal fade"
+		id="modalWebDevelopment"
+		tabindex="-1"
+		aria-labelledby="modalWebDevelopmentLabel"
+		aria-hidden="true"
+	>
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="modalWebDevelopmentLabel">Web Development Services</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+					></button>
+				</div>
+				<div class="modal-body">
+					Our web development services include:
+					<ul>
+						<li>
+							<strong>Frontend Development:</strong> Building the client-facing side of websites using
+							HTML, CSS, JavaScript, etc.
+						</li>
+						<li>
+							<strong>Backend Development:</strong> Developing server-side logic, databases, and APIs
+							to support website functionality.
+						</li>
+						<li>
+							<strong>Full-Stack Development:</strong> Offering both frontend and backend development
+							for complete web applications.
+						</li>
+						<li>
+							<strong>eCommerce Development:</strong> Creating online stores with integrated payment
+							systems, product management, and order tracking.
+						</li>
+						<li>
+							<strong>CMS Development:</strong> Setting up and customizing Content Management Systems
+							(e.g., WordPress, Joomla).
+						</li>
+						<li>
+							<strong>Web Application Development:</strong> Building dynamic web apps with complex functionalities
+							(e.g., SaaS platforms).
+						</li>
+						<li>
+							<strong>API Integration:</strong> Integrating third-party APIs (e.g., payment gateways,
+							social media) into websites and apps.
+						</li>
+						<li>
+							<strong>Maintenance and Support:</strong> Providing ongoing support, updates, and troubleshooting
+							for websites and web apps.
+						</li>
+					</ul>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Marketing and SEO Modal -->
+	<div
+		class="modal fade"
+		id="modalMarketingSEO"
+		tabindex="-1"
+		aria-labelledby="modalMarketingSEOLabel"
+		aria-hidden="true"
+	>
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="modalMarketingSEOLabel">
+						Digital Marketing and SEO Services
+					</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+					></button>
+				</div>
+				<div class="modal-body">
+					We offer comprehensive:
+					<ul>
+						<li>
+							<strong>Frontend Development:</strong> Building the client-facing side of websites using
+							HTML, CSS, JavaScript, etc.
+						</li>
+						<li>
+							<strong>Backend Development:</strong> Developing server-side logic, databases, and APIs
+							to support website functionality.
+						</li>
+						<li>
+							<strong>Full-Stack Development:</strong> Offering both frontend and backend development
+							for complete web applications.
+						</li>
+						<li>
+							<strong>eCommerce Development:</strong> Creating online stores with integrated payment
+							systems, product management, and order tracking.
+						</li>
+						<li>
+							<strong>CMS Development:</strong> Setting up and customizing Content Management Systems
+							(e.g., WordPress, Joomla).
+						</li>
+						<li>
+							<strong>Web Application Development:</strong> Building dynamic web apps with complex functionalities
+							(e.g., SaaS platforms).
+						</li>
+						<li>
+							<strong>API Integration:</strong> Integrating third-party APIs (e.g., payment gateways,
+							social media) into websites and apps.
+						</li>
+						<li>
+							<strong>Maintenance and Support:</strong> Providing ongoing support, updates, and troubleshooting
+							for websites and web apps.
+						</li>
+					</ul>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Consultation and Training Modal -->
+	<div
+		class="modal fade"
+		id="modalConsultationTraining"
+		tabindex="-1"
+		aria-labelledby="modalConsultationTrainingLabel"
+		aria-hidden="true"
+	>
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="modalConsultationTrainingLabel">
+						Consultation and Training Services
+					</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+					></button>
+				</div>
+				<div class="modal-body">
+					Our consultation services include:
+					<ul>
+						<li>
+							<strong>Search Engine Optimization (SEO):</strong> Optimizing websites to improve visibility
+							in search engines.
+						</li>
+						<li>
+							<strong>Social Media Management:</strong> Managing and growing social media accounts for
+							businesses and individuals.
+						</li>
+						<li>
+							<strong>Content Marketing:</strong> Creating and distributing valuable content to attract
+							and engage target audiences.
+						</li>
+						<li>
+							<strong>PPC Advertising:</strong> Managing pay-per-click campaigns on platforms like Google
+							Ads and social media.
+						</li>
+						<li>
+							<strong>Email Marketing:</strong> Crafting and managing email campaigns to promote products,
+							services, or content.
+						</li>
+						<li>
+							<strong>Analytics and Reporting:</strong> Tracking website performance and user behavior
+							to provide actionable insights.
+						</li>
+					</ul>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Software Development Modal -->
+	<div
+		class="modal fade"
+		id="modalSoftwareDevelopment"
+		tabindex="-1"
+		aria-labelledby="modalSoftwareDevelopmentLabel"
+		aria-hidden="true"
+	>
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="modalSoftwareDevelopmentLabel">
+						Custom Software Development
+					</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+					></button>
+				</div>
+				<div class="modal-body">
+					We specialize in custom software development:
+					<ul>
+						<li>
+							<strong>Mobile App Development:</strong> Designing and developing apps for iOS, Android,
+							and cross-platform solutions.
+						</li>
+						<li>
+							<strong>Enterprise Solutions:</strong> Developing custom software to meet specific business
+							needs (e.g., CRM, ERP systems).
+						</li>
+						<li>
+							<strong>Automation Tools:</strong> Creating tools to automate repetitive tasks, data entry,
+							and other business processes.
+						</li>
+						<li>
+							<strong>API Development:</strong> Building custom APIs to enable integrations with other
+							software systems.
+						</li>
+						<li>
+							<strong>SaaS Development:</strong> Developing software-as-a-service platforms for various
+							industries.
+						</li>
+					</ul>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Project Management and QA Modal -->
+	<div
+		class="modal fade"
+		id="modalProjectManagementQA"
+		tabindex="-1"
+		aria-labelledby="modalProjectManagementQALabel"
+		aria-hidden="true"
+	>
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="modalProjectManagementQALabel">Project Management and QA</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+					></button>
+				</div>
+				<div class="modal-body">
+					Our project management services:
+					<ul>
+						<li>
+							<strong>Project Management:</strong> Overseeing the planning, execution, and completion
+							of projects, ensuring they meet client expectations.
+						</li>
+						<li>
+							<strong>Quality Assurance (QA) Testing:</strong> Testing websites, apps, and software for
+							bugs, usability issues, and performance problems.
+						</li>
+					</ul>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
 
 	<!-- Contact Section -->
 	<section

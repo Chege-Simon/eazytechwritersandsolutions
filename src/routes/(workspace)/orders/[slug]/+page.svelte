@@ -78,6 +78,7 @@
 			await pb.collection('orders').update(order.id, order);
 			// goto('/orders/my_orders');
 			window.location.href = '/orders/my_orders';
+			// window.location.href = '/transactions/' + order.id;
 		} catch (err) {
 			console.log(err);
 		}
@@ -88,7 +89,7 @@
 	<title>Edit Order</title>
 	<meta name="description" content="place order page" />
 </svelte:head>
-<div class="card mt-5">
+<div class="card mt-5 px-5">
 	<link href="//cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet" />
 	<div class="card-body container">
 		<h4 class="card-title">Order Requirements</h4>
@@ -186,16 +187,17 @@
 					<label for="assignment_size" class="form-label fw-bolder">Assignment Size</label>
 					<div class="row">
 						<div class="col-sm-4">
-							<label for="pages" class="form-label fw-bolder">Pages:</label>
+							<label for="words" class="form-label fw-bolder">Words:</label>
 							<input
 								type="number"
 								class="form-control"
-								id="pages"
-								bind:value={order.pages}
+								id="words"
+								min="1"
+								bind:value={order.words}
 								required
 							/>
 						</div>
-						<div class="col-sm-4">
+						<div class="col-sm-8">
 							<label for="pages" class="form-label fw-bolder"
 								>Estimated No. of Pages based on (275 words per page):</label
 							>
@@ -213,10 +215,10 @@
 							<select
 								class="form-control"
 								id="line_spacing"
-								bind:value={order.line_spacing}
+								bind:value={newOrder.line_spacing}
 								required
 							>
-								<option value="">Select</option>
+								<option value={null}>Select</option>
 								<option value="1">1</option>
 								<option value="1.5">1.5</option>
 								<option value="2">2</option>
@@ -225,7 +227,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-md-6">
+			<div class="col-md-6 border border-right">
 				<div class="form-group row">
 					<label for="education_level" class="form-label fw-bolder col-sm-12">Deadline</label>
 					<div class="my-3 col-sm-12">
@@ -250,24 +252,32 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-md-12">
-				<div class="form-group row">
-					<label for="title" class="form-label fw-bolder col-sm-12">Assignment Title:</label>
-					<input type="text" class="form-control" id="title" bind:value={order.title} required />
+			<div class="col-md-12 p-5 my-3 border">
+				<div class="">
+					<div class="form-group row">
+						<label for="title" class="form-label fw-bolder col-sm-12">Assignment Title:</label>
+						<input
+							type="text"
+							class="form-control"
+							id="title"
+							bind:value={order.title}
+							required
+						/>
+					</div>
 				</div>
-			</div>
-			<div class="col-md-12">
-				<div class="form-group row">
-					<label for="description" class="form-label fw-bolder col-sm-12"
-						>Assignment Description:</label
-					>
-					<textarea
-						rows="4"
-						cols="50"
-						class="form-control"
-						id="description"
-						bind:value={order.description}
-					/>
+				<div class="">
+					<div class="form-group row">
+						<label for="description" class="form-label fw-bolder col-sm-12"
+							>Assignment Description:</label
+						>
+						<textarea
+							rows="4"
+							cols="50"
+							class="form-control"
+							id="description"
+							bind:value={order.description}
+						/>
+					</div>
 				</div>
 			</div>
 			<div class="form-group">
