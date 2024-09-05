@@ -145,7 +145,7 @@
 			<div class="navbar-menu-wrapper d-flex align-items-top">
 				<ul class="navbar-nav">
 					<li class="nav-item font-weight-semibold">
-						<h2 class="text-black fw-bold">Easy Tech Writers and Solutions</h2>
+						<h2 class="text-black fw-bold d-none d-md-block">Easy Tech Writers and Solutions</h2>
 						<h3 class="welcome-text">
 							{status}, <span class="text-black fw-bold">{$currentUser?.name}</span>
 						</h3>
@@ -239,7 +239,7 @@
 		<!-- partial -->
 		<div class="container-fluid page-body-wrapper">
 			<nav class="sidebar sidebar-offcanvas" id="sidebar">
-				<ul class="nav mt-5">
+				<ul class="nav mt-3">
 					{#if $currentUser?.role.includes('Admin') || $currentUser?.role.includes('Client')}
 						<li class="nav-item {$page.url.pathname === '/orders/new' ? 'active' : ''} mt-5">
 							<a class="nav-link" href="/orders/new">
@@ -372,7 +372,7 @@
 			</nav>
 			<!-- partial -->
 			<div class="main-panel" style="height: 100px; overflow-y: scroll">
-				<div class="content-wrapper mt-only-sm-5">
+				<div class="content-wrapper mt-only-sm-4">
 					<slot />
 				</div>
 				<!-- content-wrapper ends -->

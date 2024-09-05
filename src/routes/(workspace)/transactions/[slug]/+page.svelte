@@ -148,8 +148,10 @@
 					<p>If you'd like to send money securely and conveniently, follow these steps:</p>
 					<p>Recipient Details:</p>
 					<div class="alert alert-secondary text-primary" role="alert">
-						Recipient's Name: MARY WAIRIMU MWITHIGA<br />
-						Recipient's Phone Number: +254714222996
+						<!-- Recipient's Name: MARY WAIRIMU MWITHIGA<br /> -->
+						Recipient's Name: <br />
+						<!-- Recipient's Phone Number: +254714222996 -->
+						Recipient's Phone Number:
 					</div>
 					<p>Instructions for Sending Money:</p>
 					<ol>

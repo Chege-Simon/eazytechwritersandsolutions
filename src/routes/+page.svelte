@@ -54,7 +54,7 @@
 			<div class="row">
 				<div class="col-12">
 					<div class="container-fluid">
-						<div class="row gy-3 gy-md-4">
+						<div class="row gy-3 gy-md-4 justify-content-center">
 							<!-- Academic Writing Services -->
 							<div class="col-12 col-md-6 col-lg-4">
 								<div class="card border-dark">
@@ -223,7 +223,7 @@
 							</div>
 
 							<!-- Consultation and Training Services -->
-							<div class="col-12 col-md-6 col-lg-4">
+							<!-- <div class="col-12 col-md-6 col-lg-4">
 								<div class="card border-dark">
 									<div class="card-body text-center p-4 p-xxl-5">
 										<svg
@@ -254,7 +254,7 @@
 										</button>
 									</div>
 								</div>
-							</div>
+							</div> -->
 
 							<!-- Custom Software Development -->
 							<div class="col-12 col-md-6 col-lg-4">
@@ -566,67 +566,6 @@
 					We offer comprehensive:
 					<ul>
 						<li>
-							<strong>Frontend Development:</strong> Building the client-facing side of websites using
-							HTML, CSS, JavaScript, etc.
-						</li>
-						<li>
-							<strong>Backend Development:</strong> Developing server-side logic, databases, and APIs
-							to support website functionality.
-						</li>
-						<li>
-							<strong>Full-Stack Development:</strong> Offering both frontend and backend development
-							for complete web applications.
-						</li>
-						<li>
-							<strong>eCommerce Development:</strong> Creating online stores with integrated payment
-							systems, product management, and order tracking.
-						</li>
-						<li>
-							<strong>CMS Development:</strong> Setting up and customizing Content Management Systems
-							(e.g., WordPress, Joomla).
-						</li>
-						<li>
-							<strong>Web Application Development:</strong> Building dynamic web apps with complex functionalities
-							(e.g., SaaS platforms).
-						</li>
-						<li>
-							<strong>API Integration:</strong> Integrating third-party APIs (e.g., payment gateways,
-							social media) into websites and apps.
-						</li>
-						<li>
-							<strong>Maintenance and Support:</strong> Providing ongoing support, updates, and troubleshooting
-							for websites and web apps.
-						</li>
-					</ul>
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<!-- Consultation and Training Modal -->
-	<div
-		class="modal fade"
-		id="modalConsultationTraining"
-		tabindex="-1"
-		aria-labelledby="modalConsultationTrainingLabel"
-		aria-hidden="true"
-	>
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="modal-header">
-					<h5 class="modal-title" id="modalConsultationTrainingLabel">
-						Consultation and Training Services
-					</h5>
-					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
-					></button>
-				</div>
-				<div class="modal-body">
-					Our consultation services include:
-					<ul>
-						<li>
 							<strong>Search Engine Optimization (SEO):</strong> Optimizing websites to improve visibility
 							in search engines.
 						</li>
@@ -658,6 +597,39 @@
 			</div>
 		</div>
 	</div>
+
+	<!-- Consultation and Training Modal -->
+	<!-- <div
+		class="modal fade"
+		id="modalConsultationTraining"
+		tabindex="-1"
+		aria-labelledby="modalConsultationTrainingLabel"
+		aria-hidden="true"
+	>
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="modalConsultationTrainingLabel">
+						Consultation and Training Services
+					</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+					></button>
+				</div>
+				<div class="modal-body">
+					Our consultation services include:
+					<ul>
+						<li>
+							<strong>Search Engine Optimization (SEO):</strong> Optimizing websites to improve visibility
+							in search engines.
+						</li>
+					</ul>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div> -->
 
 	<!-- Software Development Modal -->
 	<div
@@ -804,9 +776,9 @@
 												<p class="mb-2">Please speak with us directly.</p>
 												<hr class="w-75 mb-3 border-dark-subtle" />
 												<p class="mb-0">
-													<a class="link-primary text-decoration-none" href="tel:+254714222996"
+													<!-- <a class="link-primary text-decoration-none" href="tel:+254714222996"
 														>(254) 714222996</a
-													>
+													> -->
 												</p>
 											</div>
 										</div>
